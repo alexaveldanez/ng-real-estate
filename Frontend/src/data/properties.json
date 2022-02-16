@@ -2,7 +2,7 @@
   {
     "Id": 1,
     "SellRent": 2,
-    "Name": "Birla House",
+    "Name": "Bluey",
     "Type": "House",
     "Price": 12000,
     "Image": "prop-1"
@@ -10,7 +10,7 @@
   {
     "Id": 2,
     "SellRent": 2,
-    "Name": "Erose Villa",
+    "Name": "Modern Villa",
     "Type": "House",
     "Price": 99000,
     "Image": "prop-2"
@@ -18,7 +18,7 @@
   {
     "Id": 3,
     "SellRent": 1,
-    "Name": "The Penthouse",
+    "Name": "Modern",
     "Type": "Apartment",
     "Price": 75000,
     "Image": "prop-3"
@@ -26,7 +26,7 @@
   {
     "Id": 4,
     "SellRent": 1,
-    "Name": "Town House",
+    "Name": "California",
     "Type": "House",
     "Price": 55000,
     "Image": "prop-4"
@@ -34,7 +34,7 @@
   {
     "Id": 5,
     "SellRent": 1,
-    "Name": "Macro House",
+    "Name": "Villa",
     "Type": "House",
     "Price": 25000,
     "Image": "prop-5"
@@ -42,7 +42,7 @@
   {
     "Id": 6,
     "SellRent": 1,
-    "Name": "Pearl White House",
+    "Name": "Pearl White",
     "Type": "House",
     "Price": 80000
   }

@@ -12,9 +12,16 @@
     "importHelpers": true,
     "target": "es2015",
     "module": "es2020",
+    "typeRoots": [
+      "node_modules/@types",
+      "src/alertyfytype.d.ts"
+    ],
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "@angular/*": ["./node_modules/@angular/*"]
+    }
   }
 }
