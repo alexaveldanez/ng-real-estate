@@ -1,3 +1,17 @@
+.card {
+  min-height: 400px;
+}
+
+.card-body h1 {
+  font-family: fantasy;
+  color: #0069d9;
+}
+
+.font-highlight {
+  font-style: italic;
+  color: red;
+}
+
 h1 {
   font-weight: normal;
 }
@@ -20,11 +34,6 @@ h1 {
   transition-duration: 500ms;
   transition-timing-function: ease-out;
   height: 250px;
-}
-
-
-.cardMain {
-  width: 20rem;
 }
 
 .member-icons {
