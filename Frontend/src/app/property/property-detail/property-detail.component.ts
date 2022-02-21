@@ -13,21 +13,18 @@ export class PropertyDetailComponent implements OnInit {
   public propertyId: number;
   property = new Property();
 
+
+
   constructor(private route: ActivatedRoute, private router: Router, private realEstateService: RealEstateService) { }
 
   ngOnInit() {
     this.propertyId = +this.route.snapshot.params['id'];
-
-    this.route.params.subscribe(
-      (params) => {
-        this.propertyId = +params['id'];
-        this.realEstateService.getProperty(this.propertyId).subscribe(
-          (data: Property) => {
-            this.property = data;
-          }
-        )
+    this.route.data.subscribe(
+      (data: Property) => {
+        this.property = data['prp'];
       }
-    )
+    );
+
   }
 
 }

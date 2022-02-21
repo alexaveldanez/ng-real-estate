@@ -16,43 +16,44 @@ export class RealEstateService {
   getProperty(id: number) {
     return this.getAllProperties().pipe(
       map(propertiesArray => {
+        // throw new Error('some error');
         return propertiesArray.find(p => p.Id === id);
       })
     )
   }
 
-  getAllProperties(SellRent?: number): Observable<IPropertyBase[]> {
+  getAllProperties(SellRent?: number): Observable<Property[]> {
     return this.http.get('data/properties.json').pipe(
       map(data => {
-        const propertiesArray: Array<IPropertyBase> = [];
-        const localProperties = JSON.parse(localStorage.getItem('newProp'));
+      const propertiesArray: Array<Property> = [];
+      const localProperties = JSON.parse(localStorage.getItem('newProp'));
 
-        if (localProperties) {
-          for (const id in localProperties) {
-            if(SellRent) {
-              if (localProperties.hasOwnProperty(id) && localProperties[id].SellRent === SellRent) {
-                propertiesArray.push(localProperties[id]);
-              }
-            } else {
-              propertiesArray.push(localProperties[id]);
-            }
-          }
-        }
-
-        for (const id in data) {
-
+      if (localProperties) {
+        for (const id in localProperties) {
           if (SellRent) {
-            if (data.hasOwnProperty(id) && data[id].SellRent === SellRent) {
-              propertiesArray.push(data[id]);
-            }
-          } else {
+          if (localProperties.hasOwnProperty(id) && localProperties[id].SellRent === SellRent) {
+            propertiesArray.push(localProperties[id]);
+          }
+        } else {
+          propertiesArray.push(localProperties[id]);
+        }
+        }
+      }
+
+      for (const id in data) {
+        if (SellRent) {
+          if (data.hasOwnProperty(id) && data[id].SellRent === SellRent) {
             propertiesArray.push(data[id]);
           }
+          } else {
+            propertiesArray.push(data[id]);
         }
-        return propertiesArray;
+      }
+      return propertiesArray;
       })
     );
   }
+
 
   addProperty(property: Property) {
     let newProp = [property]
